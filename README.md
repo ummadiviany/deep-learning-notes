@@ -48,14 +48,13 @@ Most commonly used activation functions are described below:
 <img src="af/sigmoidlogisticgraph.png">
 ```math
 f(x) = \frac{1}{(1+exp^{-x})}
-
 ```
 
 ##### Advantages
 
 1. Output values bound between **0 and 1**, normalizing the output of each neuron
 2. **Clear predictions**—For X above 2 or below -2, tends to bring the Y value (the prediction) to the edge of the curve, very close to 1 or 0. This enables clear predictions.
-3. **Smooth gradient**, preventing “jumps” in output values.
+3. **Smooth gradient**, preventing jumps in output values.
 
 ##### Disadvantages
 
