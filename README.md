@@ -45,11 +45,15 @@ Modern neural network models use non-linear activation functions. They allow the
 Most commonly used activation functions are described below:
 
 #### 1. Sigmoid / Logistic
-<img src="af/sigmoidlogisticgraph.png">
+<img src="af/sigmoidlogisticgraph.png"><br>
 
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x) = \frac{1}{(1%2Bexp^{-x})}">
+
+<!-- 
 ```math
 f(x) = \frac{1}{(1+exp^{-x})}
-```
+```-->
 
 ##### Advantages
 
@@ -65,12 +69,15 @@ f(x) = \frac{1}{(1+exp^{-x})}
 
 #### 2. TanH / Hyperbolic Tangent
 
-<img src="af/tanhhyperbolic.png">
+<img src="af/tanhhyperbolic.png"><br>
 
-```math
+<img src="https://render.githubusercontent.com/render/math?math=f(x) = tanh(x) =\frac{sinh(x)}{cosh(x)} =\frac{e^{x}-e^{-x}}{e^{x}%2Be^{-x}} = \frac{2}{1%2Be^{-2x}} -1">
+
+<!--```math
 f(x) = tanh(x) =\frac{sinh(x)}{cosh(x)} =\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}} = \frac{2}{1+e^{-2x}} -1
 
-```
+``` -->
+
 ##### Advantages
 1. **Zero centered**—making it easier to model inputs that have strongly negative, neutral, and strongly positive values.
 2. **Smooth gradient, Output values bound between -1 and 1 , Clear predictions**
@@ -79,11 +86,14 @@ f(x) = tanh(x) =\frac{sinh(x)}{cosh(x)} =\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}} = \fr
 1. **Vanishing gradient** , **Computationally expensive**
 
 #### 3. ReLU (Rectified Linear Unit)
-<img src="af/relu.png">
+<img src="af/relu.png"><br>
 
-```math
+<img src="https://render.githubusercontent.com/render/math?math=f(x) = max(x,0)">
+
+<!--```math
 f(x) = max(x,0)
-```
+``` -->
+
 ##### Advantages
 1. **Computationally efficient**—allows the network to converge very quickly
 2. **Non-linear**—although it looks like a linear function, ReLU has a derivative function and allows for backpropagation
@@ -92,11 +102,15 @@ f(x) = max(x,0)
 1. **The Dying ReLU problem**—when inputs approach zero, or are negative, the gradient of the function becomes zero, the network cannot perform backpropagation and cannot learn.
 
 #### 4. Leaky ReLU
-<img src="af/leakyrelu.png">
+<img src="af/leakyrelu.png"><br>
 
+<img src="https://render.githubusercontent.com/render/math?math=f(x) = max(x,0.1*x)">
+
+<!-- 
 ```math
 f(x) = max(x,0.1*x)
 ```
+-->
 ##### Advantages
 1. **Prevents dying ReLU problem**—this variation of ReLU has a small positive slope in the negative area, so it does enable backpropagation, even for negative input values
 2. **Computationally efficient, Non-linear**
@@ -106,28 +120,37 @@ f(x) = max(x,0.1*x)
 
 #### 5. Softmax
 
-```math
+<img src="https://render.githubusercontent.com/render/math?math=f(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n}{e^{x_j}}}">
+
+<!-- ```math
 f(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n}{e^{x_j}}} 
 ```
+-->
+
 ##### Advantages
 1. **Able to handle multiple classes** only one class in other activation functions—normalizes the outputs for each class between 0 and 1, and divides by their sum, giving the probability of the input value being in a specific class.
 2. **Useful for output neurons**—typically Softmax is used only for the output layer, for neural networks that need to classify inputs into multiple categories.
 
 #### 6. Swish
 
-<img src="af/swish.png">
+<img src="af/swish.png"><br>
 
+<img src="https://render.githubusercontent.com/render/math?math=f(x) = \frac{x}{1%2Be^{-x}}">
+
+<!-- 
 ```math
 f(x) = \frac{x}{1+e^{-x}} 
 ```
+-->
 
-Swish is a new, self-gated activation function discovered by researchers at Google.It performs better than ReLU with a similar level of computational efficiency. In experiments on ImageNet with identical models running ReLU and Swish, the new function achieved top-1 classification accuracy 0.6-0.9% higher.
+Swish is a new, self-gated activation function discovered by researchers at Google. It performs better than ReLU with a similar level of computational efficiency. In experiments on ImageNet with identical models running ReLU and Swish, the new function achieved top-1 classification accuracy 0.6-0.9% higher.
 
 #### 7. Softsign
 It is a quadratic polynomial, represented by:
-```math
+<img src="https://render.githubusercontent.com/render/math?math=f(x) = \frac{x}{|x|%2B1}">
+<!--```math
 f(x) = \frac{x}{|x|+1} 
-```
+``` -->
 The main difference between the softsign function and the tanh function is that unlike the tanh function that converges exponentially, the softsign function converges in a polynomial form. 
 
 #### 8. Exponential Linear Units (ELUs)
@@ -137,6 +160,7 @@ f(x) =\begin{cases}
     \alpha(e^{x}-1) & \text{if }x< 0\,.
   \end{cases}
 ```
+
 
 
 
