@@ -46,6 +46,7 @@ Most commonly used activation functions are described below:
 
 #### 1. Sigmoid / Logistic
 <img src="af/sigmoidlogisticgraph.png">
+
 ```math
 f(x) = \frac{1}{(1+exp^{-x})}
 ```
